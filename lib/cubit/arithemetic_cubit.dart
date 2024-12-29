@@ -1,28 +1,17 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ArithemeticCubit extends Cubit<int> {
-  ArithemeticCubit() : super(0);
+class ArithmeticCubit extends Cubit<int> {
+  ArithmeticCubit() : super(0);
 
-  void add(int value) {
-    emit(state + value);
+  void add(int firstNumber, int secondNumber) {
+    emit(firstNumber + secondNumber);
   }
 
-  void subtract(int value) {
-    emit(state - value);
+  void subtract(int firstNumber, int secondNumber) {
+    emit(firstNumber - secondNumber);
   }
 
-  void multiply(int value) {
-    emit(state * value);
-  }
-
-  void divide(int value) {
-    if (value == 0) {
-      throw Exception("Cannot divide by zero");
-    }
-    emit(state ~/ value);
-  }
-
-  void reset() {
-    emit(0);
+  void multiply(int firstNumber, int secondNumber) {
+    emit(firstNumber * secondNumber);
   }
 }
